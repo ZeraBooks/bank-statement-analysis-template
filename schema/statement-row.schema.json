@@ -1,0 +1,58 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ZeraBooks/bank-statement-analysis-template/main/schema/statement-row.schema.json",
+  "title": "Converted statement row",
+  "description": "One transaction from a bank statement, one row per transaction. Every CSV cell is a string. Rules BSA-001 to BSA-006 apply per row.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Account",
+    "Date",
+    "Description",
+    "Type",
+    "Amount",
+    "Own transfer"
+  ],
+  "properties": {
+    "Account": {
+      "type": "string",
+      "minLength": 1,
+      "description": "Account name with the last four digits, e.g. Checking 6120."
+    },
+    "Date": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-[0-9]{2}-[0-9]{2}$",
+      "description": "Posting date, YYYY-MM-DD."
+    },
+    "Description": {
+      "type": "string",
+      "minLength": 1,
+      "description": "As printed on the statement."
+    },
+    "Type": {
+      "type": "string",
+      "enum": [
+        "Deposit",
+        "Withdrawal",
+        "Fee",
+        "Check",
+        "Interest",
+        "Transfer"
+      ],
+      "description": "From the statement section the row was printed in."
+    },
+    "Amount": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9][0-9]*)\\.[0-9]{2}$",
+      "description": "Signed: money in positive, money out negative (BSA-005)."
+    },
+    "Own transfer": {
+      "type": "string",
+      "enum": [
+        "Yes",
+        ""
+      ],
+      "description": "Yes when the money moved between accounts of the same owner."
+    }
+  }
+}

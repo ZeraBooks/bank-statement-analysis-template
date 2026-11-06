@@ -1,0 +1,12 @@
+id,severity,rule,why it matters
+BSA-001,error,"The rows file has exactly the columns Account, Date, Description, Type, Amount, Own transfer and the balances file Account, Month, Printed opening, Printed closing",Columns are read by name. A missing one silently drops a whole check.
+BSA-002,error,Dates are YYYY-MM-DD and months YYYY-MM,Mixed date formats put rows in the wrong month and break the daily balances.
+BSA-003,error,"Type is one of Deposit, Withdrawal, Fee, Check, Interest, Transfer",NSF counts come from Fee rows and transfer checks from Transfer rows. An unknown type falls through both.
+BSA-004,error,Amounts are plain signed numbers with two decimals,A dollar sign or thousands comma turns a number into text and drops it from every total.
+BSA-005,error,"The sign agrees with the type: deposits and interest positive; withdrawals, fees and checks negative",A flipped sign moves money from deposits to withdrawals and changes the average a lender reads.
+BSA-006,error,Own transfer is Yes or blank,Only Yes takes a row out of business deposits. Anything else is ambiguous.
+BSA-007,error,Each month's printed opening plus its rows equals its printed closing,This is the proof that no row or page is missing. No analysis is produced until every month ties.
+BSA-008,error,Each month's printed opening equals the previous month's printed closing,A break means a mistyped balance or a statement for the wrong period.
+BSA-009,error,"Every account has printed balances for every month from its first to its last, and no rows fall outside them",A month with rows but no balances can't be proven. A month with no statement is a hole in the analysis.
+BSA-010,error (warning for a one-account file),Every row tagged as an own transfer has an opposite row in another account of the file within 3 days,Tagging an outside deposit as an own transfer hides income. Matching both sides proves the money only moved.
+BSA-011,warning,"Transfer rows are tagged, or confirmed as outside money","An untagged transfer counts as business money. If it came from the owner's personal account, deposits are overstated by that amount."

@@ -1,0 +1,32 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ZeraBooks/bank-statement-analysis-template/main/schema/statement-balances.schema.json",
+  "title": "Printed statement balances",
+  "description": "The opening and closing balance printed on one account's statement for one month.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "Account",
+    "Month",
+    "Printed opening",
+    "Printed closing"
+  ],
+  "properties": {
+    "Account": {
+      "type": "string",
+      "minLength": 1
+    },
+    "Month": {
+      "type": "string",
+      "pattern": "^[0-9]{4}-(0[1-9]|1[0-2])$"
+    },
+    "Printed opening": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9][0-9]*)\\.[0-9]{2}$"
+    },
+    "Printed closing": {
+      "type": "string",
+      "pattern": "^-?(0|[1-9][0-9]*)\\.[0-9]{2}$"
+    }
+  }
+}

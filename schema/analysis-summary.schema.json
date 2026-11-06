@@ -1,0 +1,247 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/ZeraBooks/bank-statement-analysis-template/main/schema/analysis-summary.schema.json",
+  "title": "Bank statement analysis",
+  "description": "The 'analysis' object printed by cli/analysis_check.py --json. Money values are strings with two decimals so they survive any JSON parser to the cent. Metric definitions are in SPEC.md.",
+  "type": "object",
+  "required": [
+    "accounts",
+    "months",
+    "per_account",
+    "combined",
+    "totals",
+    "matched_transfers",
+    "large_deposits",
+    "repeat_payers"
+  ],
+  "properties": {
+    "accounts": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "months": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "per_account": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "month",
+          "all_deposits",
+          "own_transfers_in",
+          "business_deposits",
+          "all_withdrawals",
+          "own_transfers_out",
+          "business_withdrawals",
+          "closing_balance",
+          "nsf_overdraft_items"
+        ],
+        "properties": {
+          "account": {
+            "type": "string"
+          },
+          "month": {
+            "type": "string"
+          },
+          "printed_opening": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "printed_closing": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "all_deposits": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "own_transfers_in": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "business_deposits": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "all_withdrawals": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "own_transfers_out": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "business_withdrawals": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "closing_balance": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "lowest_daily_balance": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "average_daily_balance": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "nsf_overdraft_items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "deposit_count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "combined": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "month",
+          "all_deposits",
+          "own_transfers_in",
+          "business_deposits",
+          "all_withdrawals",
+          "own_transfers_out",
+          "business_withdrawals",
+          "closing_balance",
+          "nsf_overdraft_items"
+        ],
+        "properties": {
+          "account": {
+            "type": "string"
+          },
+          "month": {
+            "type": "string"
+          },
+          "printed_opening": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "printed_closing": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "all_deposits": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "own_transfers_in": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "business_deposits": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "all_withdrawals": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "own_transfers_out": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "business_withdrawals": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "closing_balance": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "lowest_daily_balance": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "average_daily_balance": {
+            "type": "string",
+            "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+          },
+          "nsf_overdraft_items": {
+            "type": "integer",
+            "minimum": 0
+          },
+          "deposit_count": {
+            "type": "integer",
+            "minimum": 0
+          }
+        }
+      }
+    },
+    "totals": {
+      "type": "object",
+      "required": [
+        "business_deposits",
+        "average_monthly_business_deposits",
+        "nsf_overdraft_items"
+      ],
+      "properties": {
+        "all_deposits": {
+          "type": "string",
+          "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+        },
+        "own_transfers_in": {
+          "type": "string",
+          "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+        },
+        "business_deposits": {
+          "type": "string",
+          "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+        },
+        "business_withdrawals": {
+          "type": "string",
+          "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+        },
+        "nsf_overdraft_items": {
+          "type": "integer"
+        },
+        "average_monthly_business_deposits": {
+          "type": "string",
+          "pattern": "^-?[0-9]+\\.[0-9]{2}$"
+        },
+        "overstatement_if_transfers_counted_percent": {
+          "type": "string"
+        }
+      }
+    },
+    "matched_transfers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": [
+          "from_account",
+          "to_account",
+          "amount",
+          "dates"
+        ]
+      }
+    },
+    "large_deposits": {
+      "type": "object",
+      "required": [
+        "average_business_deposit",
+        "threshold",
+        "items"
+      ]
+    },
+    "repeat_payers": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    }
+  }
+}

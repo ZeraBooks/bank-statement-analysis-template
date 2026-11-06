@@ -1,0 +1,11 @@
+{
+  "date-not-iso": "BSA-002",
+  "deposit-with-minus-sign": "BSA-005",
+  "dollar-sign-in-amount": "BSA-004",
+  "month-without-balances": "BSA-009",
+  "opening-does-not-follow": "BSA-008",
+  "own-transfer-typo": "BSA-006",
+  "row-dropped": "BSA-007",
+  "transfer-other-side-missing": "BSA-010",
+  "unknown-type": "BSA-003"
+}

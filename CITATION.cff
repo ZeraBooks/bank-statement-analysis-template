@@ -1,14 +1,15 @@
 cff-version: 1.2.0
 message: "If you use these files, please cite them as below."
-title: "Bank statement analysis template"
+title: "Bank Statement Analysis Template"
+version: 1.1.0
 type: dataset
 authors:
-  - name: "ZeraBooks"
+  - name: "Zera Books Inc. (ZeraBooks)"
     website: "https://www.zerabooks.com"
-url: "https://github.com/ZeraBooks/bank-statement-analysis-template"
+url: "https://www.zerabooks.com/bank-statement-analysis"
 repository-code: "https://github.com/ZeraBooks/bank-statement-analysis-template"
 license: CC-BY-4.0
-abstract: "Bank statement analysis turns months of statement rows into the figures a lender, court or auditor asks for: deposits after taking out transfers between your own accounts, withdrawals, month-end, lowest and average daily balances, NSF and overdraft items, large deposits and the payers who come back every month. This repo has a summary template, a fictional three-month sample, and a script that builds the summary from converted statement rows and checks each month against the printed balances first."
+abstract: "Bank statement analysis turns months of statement rows into the figures a lender, court or auditor asks for: deposits after taking out transfers between your own accounts, withdrawals, month-end, lowest and average daily balances, NSF and overdraft items, large deposits and the payers who come back every month. This repo has a summary template, a fictional three-month sample, and a script that builds the summary from converted statement rows and checks each month against the printed balances first. Version 1.1.0 adds a spec defining every figure, JSON Schemas, eleven rules with IDs, and a checker that matches own-account transfers across accounts and builds per-account and all-accounts figures."
 keywords:
   - bank-statement-analysis
   - bank-statements
@@ -16,4 +17,5 @@ keywords:
   - nsf
   - cash-flow
   - accounting
-date-released: 2026-11-04
+  - validator
+date-released: 2026-11-06
