@@ -55,7 +55,7 @@ What the analysis shows that the checking statement alone doesn't:
 - **June's lowest balance was 495.75, and only because of savings.** June 3 started at 1,345.75 after rent. Payroll of 9,850.00 went out the same day the 9,000.00 came in from savings. Without that move, checking would have hit 1,345.75 - 9,850.00 = -8,504.25. A lender reads that as a business leaning on its reserves.
 - **One large deposit.** The average business deposit is 88,282.34 / 20 = 4,414.12, so anything from 8,828.24 up is flagged. That catches the 11,200.00 from Lakeview School District on June 19 and nothing else. Expect a request for the contract behind it.
 - **One transfer nobody tagged.** 1,800.00 came in on June 15 from an account ending 4471 that isn't in the file. It counts as business money for now. If it's the owner's personal account, business deposits drop to 88,282.34 - 1,800.00 = 86,482.34.
-- **Three payers came back every month:** Meridian Health Plan, Square card settlements and the State Workers Comp Fund. Savings interest is income but doesn't count as a repeat payer.
+- **Repeat payers.** Meridian Health Plan, Square card settlements and the State Workers Comp Fund deposited in every one of the three months. Savings interest is income but doesn't count as a repeat payer.
 
 All accounts together, the clinic closed June with 25,701.15 + 22,509.44 = 48,210.59.
 
