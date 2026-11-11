@@ -161,4 +161,4 @@ Full guide: [Bank statement analysis](https://www.zerabooks.com/bank-statement-a
 
 The content and data in this repository are licensed under [CC BY 4.0](LICENSE). The code (`*.py`) is licensed under [MIT](LICENSE-CODE). Cite it with [`CITATION.cff`](CITATION.cff) or as: ZeraBooks, *Bank Statement Analysis Template*, v1.1.0, 2026, https://github.com/ZeraBooks/bank-statement-analysis-template.
 
-ZeraBooks is an AI-native general ledger, bank statement converter and done-for-you bookkeeping service for small businesses and accounting firms. Maintained by [ZeraBooks](https://www.zerabooks.com).
+ZeraBooks is accounting software that does your books for you, with free setup and a free catch-up of your past months. Maintained by [ZeraBooks](https://www.zerabooks.com).
