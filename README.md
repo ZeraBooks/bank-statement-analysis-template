@@ -155,10 +155,10 @@ python3 -m unittest discover -s tests -v
 
 ## Learn more
 
-Full guide: [Bank statement analysis](https://www.zerabooks.com/bank-statement-analysis). Related: [ZeraBooks bank statement converter](https://www.zerabooks.com/bank-statement-converter) and [proof of cash](https://www.zerabooks.com/proof-of-cash).
+Full guide: Bank statement analysis. Related: [ZeraBooks bank statement converter](https://www.zerabooks.com/bank-statement-converter) and proof of cash.
 
 ## License and citation
 
 The content and data in this repository are licensed under [CC BY 4.0](LICENSE). The code (`*.py`) is licensed under [MIT](LICENSE-CODE). Cite it with [`CITATION.cff`](CITATION.cff) or as: ZeraBooks, *Bank Statement Analysis Template*, v1.1.0, 2026, https://github.com/ZeraBooks/bank-statement-analysis-template.
 
-ZeraBooks is AI bookkeeping software that runs your books. Catch-up of past months is included: you upload the statements and ZeraBooks does them. Maintained by [ZeraBooks](https://www.zerabooks.com).
+ZeraBooks is AI bookkeeping software that runs your books. Catch-up of past months is included: you upload the statements and ZeraBooks does them. Maintained by ZeraBooks.
